@@ -2,13 +2,12 @@ import os
 
 from flask import Flask
 
+from manage import init_app
 from src.blueprint import register_routing
 from src.db import db
 from src.extention import cors, migrate
 from src.utils.auth import jwt
 from src.utils.logging import configure_logging
-
-from manage import init_app
 
 
 def create_app(settings_module):
