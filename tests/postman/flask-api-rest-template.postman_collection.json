@@ -707,7 +707,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"product_name\": \"my new product\",\r\n    \"description\": \"my new product description\"\r\n}",
+							"raw": "{\r\n    \"product_name\": \"Tyre\",\r\n    \"description\": \"Nissan FB14 Tyre\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -920,6 +920,143 @@
 								"1",
 								"role",
 								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Product",
+			"item": [
+				{
+					"name": "Add to Cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product_id\": 3,\r\n    \"user_id\": 1,\r\n    \"count\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/add_to_cart",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"add_to_cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove from Cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product_id\": 3,\r\n    \"user_id\": 1,\r\n    \"count\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/remove_from_cart",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"remove_from_cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Link Products to User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/user/2/product/3",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"user",
+								"2",
+								"product",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Products to User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/user/2/product/3",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"user",
+								"2",
+								"product",
+								"3"
 							]
 						}
 					},

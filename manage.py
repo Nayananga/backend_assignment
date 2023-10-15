@@ -5,7 +5,7 @@ import click
 import coverage
 from passlib.hash import pbkdf2_sha256
 
-from src import db
+from src.db import db
 from src.models.inventory_model import InventoryModel
 from src.models.order_model import OrderModel
 from src.models.permission_model import PermissionModel

@@ -3,8 +3,6 @@ from sqlalchemy import asc
 
 from src.db import db
 from src.models.inventory_model import InventoryModel
-from src.models.permission_model import PermissionModel
-from src.models.product_model import ProductModel
 
 
 def get_all_inventory_items():
@@ -30,7 +28,9 @@ def post_inventory_item(inventory_data):
 
 
 def get_inventory_item_by_product_id(product_id):
-    results = InventoryModel.query.filter_by(product_id=product_id).first()
+    results: InventoryModel = InventoryModel.query.filter_by(
+        product_id=product_id
+    ).first()
     return results
 
 
@@ -45,13 +45,13 @@ def update_inventory_item_by_product_id(inventory_data, product_id):
     try:
         inventory_item.product_id = product_id
 
-        if inventory_data["available_count"]:
+        if inventory_data.get("available_count", ""):
             inventory_item.available_count = inventory_data["available_count"]
 
-        if inventory_data["pending_count"]:
+        if inventory_data.get("pending_count", ""):
             inventory_item.pending_count = inventory_data["pending_count"]
 
-        if inventory_data["sold_count"]:
+        if inventory_data.get("sold_count", ""):
             inventory_item.sold_count = inventory_data["sold_count"]
 
         db.session.commit()

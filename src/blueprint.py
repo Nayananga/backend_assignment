@@ -6,6 +6,7 @@ from src.controllers.product_controller import blp as ProductBluePrint
 from src.controllers.role_controller import blp as RoleBlueprint
 from src.controllers.role_permission_controller import blp as RolePermissionBlueprint
 from src.controllers.user_controller import blp as UserBlueprint
+from src.controllers.user_product_controller import blp as UserProductBlueprint
 from src.controllers.user_role_controller import blp as UserRoleBlueprint
 
 
@@ -19,3 +20,4 @@ def register_routing(app):
     api.register_blueprint(RolePermissionBlueprint)
     api.register_blueprint(ProductBluePrint)
     api.register_blueprint(InventoryBluePrint)
+    api.register_blueprint(UserProductBlueprint)
