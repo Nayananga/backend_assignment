@@ -54,13 +54,13 @@ Development environment that uses PostgreSQL in local and uses the server flask 
     ```shell
     pip install -r requirements.txt
     ```
-2. Create PosgresSQL on Ubuntu 20.04 
-    Install PosgresSQL
+2. Create PostgreSQL on Ubuntu 20.04 
+    Install PostgresSQL
     ```shell
     sudo apt-get install postgresql-12
     ```
 
-    Go in PosgresSQL
+    Go in PostgreSQL
     ```shell
     sudo -u postgres psql
     ```
@@ -125,13 +125,13 @@ Testing environment that uses PostgreSQL as database (db_test) and performs unit
     ```shell
     pip install -r requirements.txt
     ```
-2. Create PosgresSQL on Ubuntu 20.04 
-    Install PosgresSQL
+2. Create PostgreSQL on Ubuntu 20.04 
+    Install PostgreSQL
     ```shell
     sudo apt-get install postgresql-12
     ```
 
-    Go in PosgresSQL
+    Go in PostgreSQL
     ```shell
     sudo -u postgres psql
     ```

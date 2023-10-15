@@ -1,0 +1,7 @@
+black
+black[jupyter]
+isort
+flake8
+flake8-annotations
+mypy
+pre-commit
