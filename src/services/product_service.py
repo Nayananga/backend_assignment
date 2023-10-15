@@ -24,7 +24,7 @@ def post_product(product_data):
         db.session.rollback()
         abort(400, message="Can not add product!")
 
-    return {"message": "Add successfully!"}
+    return {"message": "Add successfully!", "product_id": new_row.id}
 
 
 def get_product(product_id):
@@ -33,7 +33,7 @@ def get_product(product_id):
 
 
 def update_product(product_data, product_id):
-    product = ProductModel.query.filter_by(id=product_id).first()
+    product: ProductModel = ProductModel.query.filter_by(id=product_id).first()
 
     if not product:
         abort(400, message="product doesn't exist, cannot update!")

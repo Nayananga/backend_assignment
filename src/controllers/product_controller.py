@@ -4,7 +4,7 @@ from flask_principal import Permission, RoleNeed
 from flask_smorest import Blueprint
 
 from src.schemas.product_schema import PlainProductSchema
-from src.services import product_service
+from src.services import inventory_service, product_service
 
 # Define permissions
 read_permission = Permission(RoleNeed("read"))
@@ -27,6 +27,7 @@ class ProductList(MethodView):
     @blp.arguments(PlainProductSchema)
     def post(self, qa_history_data):
         result = product_service.post_product(qa_history_data)
+        result = inventory_service.post_inventory_item(result)
         return result
 
 

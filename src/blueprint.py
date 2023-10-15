@@ -1,5 +1,6 @@
 from flask_smorest import Api
 
+from src.controllers.inventory_controller import blp as InventoryBluePrint
 from src.controllers.permission_controller import blp as PermissionBlueprint
 from src.controllers.product_controller import blp as ProductBluePrint
 from src.controllers.role_controller import blp as RoleBlueprint
@@ -17,3 +18,4 @@ def register_routing(app):
     api.register_blueprint(UserRoleBlueprint)
     api.register_blueprint(RolePermissionBlueprint)
     api.register_blueprint(ProductBluePrint)
+    api.register_blueprint(InventoryBluePrint)
