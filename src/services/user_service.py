@@ -1,5 +1,3 @@
-from datetime import datetime
-
 from flask import current_app
 from flask_jwt_extended import (
     create_access_token,

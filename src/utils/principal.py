@@ -1,5 +1,6 @@
 from flask_principal import RoleNeed, identity_loaded
 
+from src.extention import principal  # noqa F401
 from src.models.user_model import UserModel
 
 

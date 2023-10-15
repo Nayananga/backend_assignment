@@ -8,6 +8,7 @@ from src.db import db
 from src.extention import cors, migrate
 from src.utils.auth import jwt
 from src.utils.logging import configure_logging
+from src.utils.principal import principal
 
 
 def create_app(settings_module):
@@ -19,6 +20,7 @@ def create_app(settings_module):
     migrate.init_app(app, db)
     jwt.init_app(app)
     cors.init_app(app, supports_credentials="true", resources={r"*": {"origins": "*"}})
+    principal.init_app(app)
     init_app(app)
 
     # Logging configuration
