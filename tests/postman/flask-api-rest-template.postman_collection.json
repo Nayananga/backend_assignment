@@ -1,10 +1,9 @@
 {
 	"info": {
-		"_postman_id": "03bd1377-f65e-4a5d-b478-2af9d4f41f18",
+		"_postman_id": "6f3be327-d358-41c9-b5a7-492d55d94ee4",
 		"name": "Template REST API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "20498029",
-		"_collection_link": "https://dark-escape-873868.postman.co/workspace/My-Workspace~fd59678e-5c9a-4e36-8407-3c2ba6dcae38/collection/20498029-03bd1377-f65e-4a5d-b478-2af9d4f41f18?action=share&creator=20498029&source=collection_link"
+		"_exporter_id": "29345893"
 	},
 	"item": [
 		{
@@ -634,6 +633,139 @@
 			]
 		},
 		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Get all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/product",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/product/1",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"product",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add new",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product_name\": \"my new product\",\r\n    \"description\": \"my new product description\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/product",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product_name\": \"my new updated product\",\r\n    \"description\": \"my new updated product description\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/product/4",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"product",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "User Role",
 			"item": [
 				{
@@ -729,6 +861,36 @@
 					"response": []
 				}
 			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "HOST",
+			"value": "http://127.0.0.1:5000"
+		},
+		{
+			"key": "TOKEN",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6dHJ1ZSwiaWF0IjoxNjk3Mzg4OTM3LCJqdGkiOiJmMmRhYTAwYi02Y2IzLTQ1MTYtODViNS01ZWNiMmNhZmU3OWQiLCJ0eXBlIjoiYWNjZXNzIiwic3ViIjo1LCJuYmYiOjE2OTczODg5MzcsImV4cCI6MTY5NzM5MDczNywiaXNfYWRtaW4iOmZhbHNlfQ.1Jzvt52z4ocvlMTK6hwtKD2VugF8ZoOa5GyFdKHuWps"
 		}
 	]
 }
