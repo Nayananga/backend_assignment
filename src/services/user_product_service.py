@@ -66,3 +66,22 @@ def update_products_to_user(cart_data, operation):
         abort(400, message="Can not update cart item!")
 
     return {"message": "Update successfully!"}
+
+
+def get_ordered_products_by_user_id(user_id):
+    user_products: [UserProductModel] = UserProductModel.query.filter_by(
+        user_id=user_id
+    ).all()
+
+    if not user_products:
+        abort(404, message="Your cart is empty!")
+
+    return [
+        {
+            "id": u.id,
+            "user_id": u.user_id,
+            "product_id": u.product_id,
+            "count": u.count,
+        }
+        for u in user_products
+    ]

@@ -1,13 +1,14 @@
 from marshmallow import Schema, fields
 
 
-class LinkUserAndProductSchema(Schema):
+class PlainUserAndProductSchema(Schema):
+    user_id = fields.Int()
+    product_id = fields.Int()
+
+
+class LinkUserAndProductSchema(PlainUserAndProductSchema):
     message = fields.Str()
-    user_id = fields.Int()
-    product_id = fields.Int()
 
 
-class UpdateUserAndProductSchema(Schema):
-    user_id = fields.Int()
-    product_id = fields.Int()
+class UpdateUserAndProductSchema(PlainUserAndProductSchema):
     count = fields.Int()

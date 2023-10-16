@@ -3,6 +3,7 @@ from flask_jwt_extended import jwt_required
 from flask_smorest import Blueprint
 
 from src.models.inventory_model import InventoryModel
+from src.models.user_product_model import UserProductModel
 from src.schemas.user_product_schema import (
     LinkUserAndProductSchema,
     UpdateUserAndProductSchema,
@@ -30,54 +31,61 @@ class LinkProductsToUser(MethodView):
 class AddProductsToUser(MethodView):
     @jwt_required()
     @blp.arguments(UpdateUserAndProductSchema)
-    @blp.response(201, LinkUserAndProductSchema)
     def put(self, qa_history_data):
         product_id = qa_history_data["product_id"]
         count = qa_history_data["count"]
 
-        result: InventoryModel = inventory_service.get_inventory_item_by_product_id(
-            product_id
+        inventory_item: InventoryModel = (
+            inventory_service.get_inventory_item_by_product_id(product_id)
         )
 
-        if result.available_count > count:
+        if inventory_item.available_count > count:
+            user_product_service.update_products_to_user(qa_history_data, "add")
+
             inventory_data = {
-                "available_count": result.available_count - count,
-                "pending_count": result.pending_count + count,
+                "available_count": inventory_item.available_count - count,
+                "pending_count": inventory_item.pending_count + count,
             }
 
-            result = inventory_service.update_inventory_item_by_product_id(
+            inventory_item = inventory_service.update_inventory_item_by_product_id(
                 inventory_data, product_id
             )
 
-            result = user_product_service.update_products_to_user(
-                qa_history_data, "add"
-            )
-            return result
+            return inventory_item
         return {"message": "Not enough available items to add"}
 
 
 @blp.route("/remove_from_cart")
-class AddProductsToUser(MethodView):
+class RemoveProductsFromUser(MethodView):
     @jwt_required()
     @blp.arguments(UpdateUserAndProductSchema)
-    @blp.response(201, LinkUserAndProductSchema)
     def put(self, qa_history_data):
         product_id = qa_history_data["product_id"]
         count = qa_history_data["count"]
 
-        result: InventoryModel = inventory_service.get_inventory_item_by_product_id(
-            product_id
+        user_product_service.update_products_to_user(qa_history_data, "remove")
+
+        inventory_item: InventoryModel = (
+            inventory_service.get_inventory_item_by_product_id(product_id)
         )
 
         inventory_data = {
-            "available_count": result.available_count + count,
-            "pending_count": result.pending_count - count,
+            "available_count": inventory_item.available_count + count,
+            "pending_count": inventory_item.pending_count - count,
         }
 
-        result = inventory_service.update_inventory_item_by_product_id(
+        inventory_item = inventory_service.update_inventory_item_by_product_id(
             inventory_data, product_id
         )
 
-        result = user_product_service.update_products_to_user(qa_history_data, "remove")
+        return inventory_item
 
+
+@blp.route("/view_cart/user/<int:user_id>")
+class ViewCart(MethodView):
+    @jwt_required()
+    def get(self, user_id):
+        result: [
+            UserProductModel
+        ] = user_product_service.get_ordered_products_by_user_id(user_id)
         return result
