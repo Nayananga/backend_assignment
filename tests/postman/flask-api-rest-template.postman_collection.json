@@ -25,12 +25,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{HOST}}/user",
+							"raw": "{{HOST}}/{{API_PREFIX}}/{{API_VERSION}}/users",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"user"
+								"{{API_PREFIX}}",
+								"{{API_VERSION}}",
+								"users"
 							]
 						}
 					},
@@ -52,12 +54,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{HOST}}/user/1",
+							"raw": "{{HOST}}/{{API_PREFIX}}/{{API_VERSION}}/users/1",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"user",
+								"{{API_PREFIX}}",
+								"{{API_VERSION}}",
+								"users",
 								"1"
 							]
 						}
@@ -89,12 +93,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{HOST}}/user/1",
+							"raw": "{{HOST}}/{{API_PREFIX}}/{{API_VERSION}}/users/1",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"user",
+								"{{API_PREFIX}}",
+								"{{API_VERSION}}",
+								"users",
 								"1"
 							]
 						}
@@ -137,12 +143,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{HOST}}/block-user/3",
+							"raw": "{{HOST}}/{{API_PREFIX}}/{{API_VERSION}}/block-users/3",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"block-user",
+								"{{API_PREFIX}}",
+								"{{API_VERSION}}",
+								"block-users",
 								"3"
 							]
 						}
@@ -182,11 +190,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{HOST}}/login",
+							"raw": "{{HOST}}/{{API_PREFIX}}/{{API_VERSION}}/login",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
+								"{{API_PREFIX}}",
+								"{{API_VERSION}}",
 								"login"
 							]
 						}
@@ -209,11 +219,13 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{HOST}}/logout",
+							"raw": "{{HOST}}/{{API_PREFIX}}/{{API_VERSION}}/logout",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
+								"{{API_PREFIX}}",
+								"{{API_VERSION}}",
 								"logout"
 							]
 						}
@@ -249,11 +261,13 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{HOST}}/refresh",
+							"raw": "{{HOST}}/{{API_PREFIX}}/{{API_VERSION}}/refresh",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
+								"{{API_PREFIX}}",
+								"{{API_VERSION}}",
 								"refresh"
 							]
 						}
@@ -280,11 +294,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{HOST}}/register",
+							"raw": "{{HOST}}/{{API_PREFIX}}/{{API_VERSION}}/register",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
+								"{{API_PREFIX}}",
+								"{{API_VERSION}}",
 								"register"
 							]
 						}
@@ -312,12 +328,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{HOST}}/role",
+							"raw": "{{HOST}}/{{API_PREFIX}}/{{API_VERSION}}/roles",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"role"
+								"{{API_PREFIX}}",
+								"{{API_VERSION}}",
+								"roles"
 							]
 						}
 					},
@@ -339,12 +357,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{HOST}}/role/1",
+							"raw": "{{HOST}}/{{API_PREFIX}}/{{API_VERSION}}/roles/1",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"role",
+								"{{API_PREFIX}}",
+								"{{API_VERSION}}",
+								"roles",
 								"1"
 							]
 						}
@@ -376,12 +396,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{HOST}}/role",
+							"raw": "{{HOST}}/{{API_PREFIX}}/{{API_VERSION}}/roles",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"role"
+								"{{API_PREFIX}}",
+								"{{API_VERSION}}",
+								"roles"
 							]
 						}
 					},
@@ -412,12 +434,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{HOST}}/role/1",
+							"raw": "{{HOST}}/{{API_PREFIX}}/{{API_VERSION}}/roles/1",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"role",
+								"{{API_PREFIX}}",
+								"{{API_VERSION}}",
+								"roles",
 								"1"
 							]
 						}
@@ -449,12 +473,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{HOST}}/role/13",
+							"raw": "{{HOST}}/{{API_PREFIX}}/{{API_VERSION}}/roles/13",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"role",
+								"{{API_PREFIX}}",
+								"{{API_VERSION}}",
+								"roles",
 								"13"
 							]
 						}
@@ -482,12 +508,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{HOST}}/permission",
+							"raw": "{{HOST}}/{{API_PREFIX}}/{{API_VERSION}}/permissions",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"permission"
+								"{{API_PREFIX}}",
+								"{{API_VERSION}}",
+								"permissions"
 							]
 						}
 					},
@@ -509,12 +537,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{HOST}}/permission/1",
+							"raw": "{{HOST}}/{{API_PREFIX}}/{{API_VERSION}}/permissions/1",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"permission",
+								"{{API_PREFIX}}",
+								"{{API_VERSION}}",
+								"permissions",
 								"1"
 							]
 						}
@@ -546,12 +576,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{HOST}}/permission",
+							"raw": "{{HOST}}/{{API_PREFIX}}/{{API_VERSION}}/permissions",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"permission"
+								"{{API_PREFIX}}",
+								"{{API_VERSION}}",
+								"permissions"
 							]
 						}
 					},
@@ -582,12 +614,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{HOST}}/permission/4",
+							"raw": "{{HOST}}/{{API_PREFIX}}/{{API_VERSION}}/permissions/4",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"permission",
+								"{{API_PREFIX}}",
+								"{{API_VERSION}}",
+								"permissions",
 								"4"
 							]
 						}
@@ -619,11 +653,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{HOST}}/permission-role-update",
+							"raw": "{{HOST}}/{{API_PREFIX}}/{{API_VERSION}}/permission-role-update",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
+								"{{API_PREFIX}}",
+								"{{API_VERSION}}",
 								"permission-role-update"
 							]
 						}
@@ -651,12 +687,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{HOST}}/product",
+							"raw": "{{HOST}}/{{API_PREFIX}}/{{API_VERSION}}/products",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"product"
+								"{{API_PREFIX}}",
+								"{{API_VERSION}}",
+								"products"
 							]
 						}
 					},
@@ -678,12 +716,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{HOST}}/product/1",
+							"raw": "{{HOST}}/{{API_PREFIX}}/{{API_VERSION}}/products/1",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"product",
+								"{{API_PREFIX}}",
+								"{{API_VERSION}}",
+								"products",
 								"1"
 							]
 						}
@@ -715,12 +755,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{HOST}}/product",
+							"raw": "{{HOST}}/{{API_PREFIX}}/{{API_VERSION}}/products",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"product"
+								"{{API_PREFIX}}",
+								"{{API_VERSION}}",
+								"products"
 							]
 						}
 					},
@@ -751,12 +793,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{HOST}}/product/4",
+							"raw": "{{HOST}}/{{API_PREFIX}}/{{API_VERSION}}/products/4",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"product",
+								"{{API_PREFIX}}",
+								"{{API_VERSION}}",
+								"products",
 								"4"
 							]
 						}
@@ -784,11 +828,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{HOST}}/inventory",
+							"raw": "{{HOST}}/{{API_PREFIX}}/{{API_VERSION}}/inventory",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
+								"{{API_PREFIX}}",
+								"{{API_VERSION}}",
 								"inventory"
 							]
 						}
@@ -811,11 +857,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{HOST}}/inventory/3",
+							"raw": "{{HOST}}/{{API_PREFIX}}/{{API_VERSION}}/inventory/3",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
+								"{{API_PREFIX}}",
+								"{{API_VERSION}}",
 								"inventory",
 								"3"
 							]
@@ -848,11 +896,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{HOST}}/inventory/5",
+							"raw": "{{HOST}}/{{API_PREFIX}}/{{API_VERSION}}/inventory/5",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
+								"{{API_PREFIX}}",
+								"{{API_VERSION}}",
 								"inventory",
 								"5"
 							]
@@ -881,14 +931,16 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{HOST}}/user/1/role/2",
+							"raw": "{{HOST}}/{{API_PREFIX}}/{{API_VERSION}}/users/1/roles/2",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"user",
+								"{{API_PREFIX}}",
+								"{{API_VERSION}}",
+								"users",
 								"1",
-								"role",
+								"roles",
 								"2"
 							]
 						}
@@ -911,14 +963,16 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{HOST}}/user/1/role/2",
+							"raw": "{{HOST}}/{{API_PREFIX}}/{{API_VERSION}}/users/1/roles/2",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"user",
+								"{{API_PREFIX}}",
+								"{{API_VERSION}}",
+								"users",
 								"1",
-								"role",
+								"roles",
 								"2"
 							]
 						}
@@ -955,12 +1009,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{HOST}}/add_to_cart",
+							"raw": "{{HOST}}/{{API_PREFIX}}/{{API_VERSION}}/add-to-cart",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"add_to_cart"
+								"{{API_PREFIX}}",
+								"{{API_VERSION}}",
+								"add-to-cart"
 							]
 						}
 					},
@@ -991,12 +1047,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{HOST}}/remove_from_cart",
+							"raw": "{{HOST}}/{{API_PREFIX}}/{{API_VERSION}}/remove-from-cart",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"remove_from_cart"
+								"{{API_PREFIX}}",
+								"{{API_VERSION}}",
+								"remove-from-cart"
 							]
 						}
 					},
@@ -1018,13 +1076,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{HOST}}/view_cart/user/2",
+							"raw": "{{HOST}}/{{API_PREFIX}}/{{API_VERSION}}/view_cart/users/2",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
+								"{{API_PREFIX}}",
+								"{{API_VERSION}}",
 								"view_cart",
-								"user",
+								"users",
 								"2"
 							]
 						}
@@ -1047,14 +1107,16 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{HOST}}/user/2/product/4",
+							"raw": "{{HOST}}/{{API_PREFIX}}/{{API_VERSION}}/users/2/products/4",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"user",
+								"{{API_PREFIX}}",
+								"{{API_VERSION}}",
+								"users",
 								"2",
-								"product",
+								"products",
 								"4"
 							]
 						}
@@ -1077,14 +1139,16 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{HOST}}/user/2/product/3",
+							"raw": "{{HOST}}/{{API_PREFIX}}/{{API_VERSION}}/users/2/products/3",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"user",
+								"{{API_PREFIX}}",
+								"{{API_VERSION}}",
+								"users",
 								"2",
-								"product",
+								"products",
 								"3"
 							]
 						}
@@ -1112,11 +1176,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{HOST}}/role-permission",
+							"raw": "{{HOST}}/{{API_PREFIX}}/{{API_VERSION}}/role-permission",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
+								"{{API_PREFIX}}",
+								"{{API_VERSION}}",
 								"role-permission"
 							]
 						}
@@ -1153,12 +1219,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{HOST}}/order",
+							"raw": "{{HOST}}/{{API_PREFIX}}/{{API_VERSION}}/orders",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"order"
+								"{{API_PREFIX}}",
+								"{{API_VERSION}}",
+								"orders"
 							]
 						}
 					},
@@ -1195,6 +1263,16 @@
 		{
 			"key": "TOKEN",
 			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6dHJ1ZSwiaWF0IjoxNjk3Mzg4OTM3LCJqdGkiOiJmMmRhYTAwYi02Y2IzLTQ1MTYtODViNS01ZWNiMmNhZmU3OWQiLCJ0eXBlIjoiYWNjZXNzIiwic3ViIjo1LCJuYmYiOjE2OTczODg5MzcsImV4cCI6MTY5NzM5MDczNywiaXNfYWRtaW4iOmZhbHNlfQ.1Jzvt52z4ocvlMTK6hwtKD2VugF8ZoOa5GyFdKHuWps"
+		},
+		{
+			"key": "API_PREFIX",
+			"value": "api",
+			"type": "string"
+		},
+		{
+			"key": "API_VERSION",
+			"value": "v1",
+			"type": "string"
 		}
 	]
 }

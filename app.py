@@ -27,7 +27,7 @@ def create_app(settings_module):
     configure_logging(app)
 
     # Register Blueprint
-    register_routing(app)
+    register_routing(app, prefix=app.config.get("API_PREFIX"))
 
     return app
 

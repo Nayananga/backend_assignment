@@ -14,7 +14,7 @@ delete_permission = Permission(RoleNeed("delete"))
 blp = Blueprint("Role", __name__, description="Role API")
 
 
-@blp.route("/role")
+@blp.route("/roles")
 class RoleList(MethodView):
     @jwt_required()
     @read_permission.require(http_exception=403)
@@ -31,7 +31,7 @@ class RoleList(MethodView):
         return result
 
 
-@blp.route("/role/<int:role_id>")
+@blp.route("/roles/<int:role_id>")
 class Role(MethodView):
     @jwt_required()
     @read_permission.require(http_exception=403)

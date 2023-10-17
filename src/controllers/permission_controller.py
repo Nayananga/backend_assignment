@@ -13,7 +13,7 @@ write_permission = Permission(RoleNeed("write"))
 blp = Blueprint("Permission", __name__, description="Permission API")
 
 
-@blp.route("/permission")
+@blp.route("/permissions")
 class PermissionList(MethodView):
     @jwt_required()
     @read_permission.require(http_exception=403)
@@ -30,7 +30,7 @@ class PermissionList(MethodView):
         return result
 
 
-@blp.route("/permission/<int:permission_id>")
+@blp.route("/permissions/<int:permission_id>")
 class Permission(MethodView):
     @jwt_required()
     @read_permission.require(http_exception=403)

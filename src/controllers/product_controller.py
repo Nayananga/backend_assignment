@@ -13,7 +13,7 @@ write_permission = Permission(RoleNeed("write"))
 blp = Blueprint("Product", __name__, description="Product API")
 
 
-@blp.route("/product")
+@blp.route("/products")
 class ProductList(MethodView):
     @jwt_required()
     @read_permission.require(http_exception=403)
@@ -31,7 +31,7 @@ class ProductList(MethodView):
         return result
 
 
-@blp.route("/product/<int:product_id>")
+@blp.route("/products/<int:product_id>")
 class Product(MethodView):
     @jwt_required()
     @read_permission.require(http_exception=403)

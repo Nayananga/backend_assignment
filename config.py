@@ -61,6 +61,8 @@ class DefaultConfig:
     DATE_FMT = "%Y-%m-%d %H:%M:%S"
     LOG_FILE_API = f"{basedir}/logs/api.log"
 
+    API_PREFIX = "/api"
+
 
 class DevelopConfig(DefaultConfig):
     # App environment

@@ -8,7 +8,7 @@ from src.services import user_role_service
 blp = Blueprint("User And Role", __name__, description="User And Role API")
 
 
-@blp.route("/user/<int:user_id>/role/<int:role_id>")
+@blp.route("/users/<int:user_id>/roles/<int:role_id>")
 class LinkRolesToUser(MethodView):
     @jwt_required()
     @blp.response(201, RoleSchema)

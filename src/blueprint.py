@@ -12,14 +12,14 @@ from src.controllers.user_role_controller import blp as UserRoleBlueprint
 
 
 # Register Blueprint
-def register_routing(app):
+def register_routing(app, prefix):
     api = Api(app)
-    api.register_blueprint(UserBlueprint)
-    api.register_blueprint(RoleBlueprint)
-    api.register_blueprint(PermissionBlueprint)
-    api.register_blueprint(UserRoleBlueprint)
-    api.register_blueprint(RolePermissionBlueprint)
-    api.register_blueprint(ProductBluePrint)
-    api.register_blueprint(InventoryBluePrint)
-    api.register_blueprint(UserProductBlueprint)
-    api.register_blueprint(OrderBlueprint)
+    api.register_blueprint(UserBlueprint, url_prefix=prefix+"/v1")
+    api.register_blueprint(RoleBlueprint, url_prefix=prefix+"/v1")
+    api.register_blueprint(PermissionBlueprint, url_prefix=prefix+"/v1")
+    api.register_blueprint(UserRoleBlueprint, url_prefix=prefix+"/v1")
+    api.register_blueprint(RolePermissionBlueprint, url_prefix=prefix+"/v1")
+    api.register_blueprint(ProductBluePrint, url_prefix=prefix+"/v1")
+    api.register_blueprint(InventoryBluePrint, url_prefix=prefix+"/v1")
+    api.register_blueprint(UserProductBlueprint, url_prefix=prefix+"/v1")
+    api.register_blueprint(OrderBlueprint, url_prefix=prefix+"/v1")

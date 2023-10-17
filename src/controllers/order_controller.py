@@ -19,7 +19,7 @@ delete_permission = Permission(RoleNeed("delete"))
 blp = Blueprint("Order", __name__, description="Order API")
 
 
-@blp.route("/order")
+@blp.route("/orders")
 class Order(MethodView):
     @blp.arguments(PlainOrderSchema)
     def post(self, order_data):

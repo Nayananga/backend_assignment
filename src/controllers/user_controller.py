@@ -19,7 +19,7 @@ delete_permission = Permission(RoleNeed("delete"))
 blp = Blueprint("User", __name__, description="User API")
 
 
-@blp.route("/user")
+@blp.route("/users")
 class UserList(MethodView):
     @jwt_required()
     @read_permission.require(http_exception=403)
@@ -29,7 +29,7 @@ class UserList(MethodView):
         return result
 
 
-@blp.route("/user/<int:user_id>")
+@blp.route("/users/<int:user_id>")
 class User(MethodView):
     @jwt_required()
     @read_permission.require(http_exception=403)
@@ -46,7 +46,7 @@ class User(MethodView):
         return result
 
 
-@blp.route("/block-user/<int:user_id>")
+@blp.route("/block-users/<int:user_id>")
 class BlockUser(MethodView):
     @jwt_required()
     @delete_permission.require(http_exception=403)

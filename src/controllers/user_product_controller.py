@@ -13,7 +13,7 @@ from src.services import inventory_service, user_product_service
 blp = Blueprint("Shopping Cart", __name__, description="User And Product API")
 
 
-@blp.route("/user/<int:user_id>/product/<int:product_id>")
+@blp.route("/users/<int:user_id>/products/<int:product_id>")
 class LinkProductsToUser(MethodView):
     @jwt_required()
     @blp.response(201, LinkUserAndProductSchema)
@@ -27,7 +27,7 @@ class LinkProductsToUser(MethodView):
         return result
 
 
-@blp.route("/add_to_cart")
+@blp.route("/add-to-cart")
 class AddProductsToUser(MethodView):
     @jwt_required()
     @blp.arguments(UpdateUserAndProductSchema)
@@ -55,7 +55,7 @@ class AddProductsToUser(MethodView):
         return {"message": "Not enough available items to add"}
 
 
-@blp.route("/remove_from_cart")
+@blp.route("/remove-from-cart")
 class RemoveProductsFromUser(MethodView):
     @jwt_required()
     @blp.arguments(UpdateUserAndProductSchema)
@@ -81,7 +81,7 @@ class RemoveProductsFromUser(MethodView):
         return inventory_item
 
 
-@blp.route("/view_cart/user/<int:user_id>")
+@blp.route("/view-cart/users/<int:user_id>")
 class ViewCart(MethodView):
     @jwt_required()
     def get(self, user_id):
